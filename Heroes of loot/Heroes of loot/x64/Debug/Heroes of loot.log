@@ -1,0 +1,20 @@
+﻿Сборка начата 02.10.2015 0:56:33.
+     1>Проект "C:\Users\mm\Documents\Visual Studio 2015\Projects\Heroes of loot\Heroes of loot\Heroes of loot.vcxproj" в узле 2 (целевые объекты Build).
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(392,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (see_buttle.ver2.0.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+     1>ClCompile:
+         C:\Program Files (x86)\VC\bin\x86_amd64\CL.exe /c /IC:/SFML/include /ZI /nologo /W3 /WX- /sdl /Od /D SFML_DYNAMIC /D _MBCS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Debug\\" /Fd"x64\Debug\vc140.pdb" /Gd /TP /errorReport:prompt Main.cpp
+         Main.cpp
+     1>c:\users\mm\documents\visual studio 2015\projects\heroes of loot\heroes of loot\main.cpp(25): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+     1>c:\users\mm\documents\visual studio 2015\projects\heroes of loot\heroes of loot\main.cpp(58): warning C4244: инициализация: преобразование "sf::Int64" в "float", возможна потеря данных
+     1>c:\users\mm\documents\visual studio 2015\projects\heroes of loot\heroes of loot\main.cpp(73): warning C4305: =: усечение из "double" к "float"
+     1>c:\users\mm\documents\visual studio 2015\projects\heroes of loot\heroes of loot\main.cpp(78): warning C4305: =: усечение из "double" к "float"
+     1>c:\users\mm\documents\visual studio 2015\projects\heroes of loot\heroes of loot\main.cpp(83): warning C4305: =: усечение из "double" к "float"
+     1>c:\users\mm\documents\visual studio 2015\projects\heroes of loot\heroes of loot\main.cpp(89): warning C4305: =: усечение из "double" к "float"
+       Link:
+         C:\Program Files (x86)\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\mm\Documents\Visual Studio 2015\Projects\Heroes of loot\Heroes of loot\x64\Debug\Heroes of loot.exe" /INCREMENTAL /NOLOGO /LIBPATH:C:/SFML/lib "sfml-graphics-d.lib" "sfml-window-d.lib" "sfml-system-d.lib" "sfml-audio-d.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Users\mm\Documents\Visual Studio 2015\Projects\Heroes of loot\Heroes of loot\x64\Debug\Heroes of loot.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\mm\Documents\Visual Studio 2015\Projects\Heroes of loot\Heroes of loot\x64\Debug\Heroes of loot.lib" /MACHINE:X64 x64\Debug\Main.obj
+         Heroes of loot.vcxproj -> C:\Users\mm\Documents\Visual Studio 2015\Projects\Heroes of loot\Heroes of loot\x64\Debug\Heroes of loot.exe
+     1>Сборка проекта "C:\Users\mm\Documents\Visual Studio 2015\Projects\Heroes of loot\Heroes of loot\Heroes of loot.vcxproj" завершена (целевые объекты Build).
+
+Сборка успешно завершена.
+
+Затраченное время: 00:00:01.50
