@@ -102,8 +102,10 @@ Copy "C:/SFML/bin/sfml-system-d-2.dll"</Command>
       <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;sfml-audio-d.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PreLinkEvent>
-      <Command>
-      </Command>
+      <Command>copy "C:\SFML\bin\sfml-system-d-2.dll" "$(OutputPath)sfml-system-d-2.dll"
+copy "C:\SFML\bin\sfml-window-d-2.dll" "$(OutputPath)sfml-window-d-2.dll"
+copy "C:\SFML\bin\sfml-graphics-d-2.dll" "$(OutputPath)sfml-graphics-d-2.dll"
+copy "C:\SFML\bin\sfml-audio-d-2.dll" "$(OutputPath)sfml-audio-d-2.dll"</Command>
     </PreLinkEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -136,6 +138,20 @@ Copy "C:/SFML/bin/sfml-system-d-2.dll"</Command>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="TinyXML\tinystr.cpp" />
+    <ClCompile Include="TinyXML\tinyxml.cpp" />
+    <ClCompile Include="TinyXML\tinyxmlerror.cpp" />
+    <ClCompile Include="TinyXML\tinyxmlparser.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="enemy.h" />
+    <ClInclude Include="Level.h" />
+    <ClInclude Include="map.h" />
+    <ClInclude Include="player.h" />
+    <ClInclude Include="TinyXML\tinystr.h" />
+    <ClInclude Include="TinyXML\tinyxml.h" />
+    <ClInclude Include="view.h" />
+    <ClInclude Include="weapons.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
