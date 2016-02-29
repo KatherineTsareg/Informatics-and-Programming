@@ -145,7 +145,7 @@ copy "C:\SFML\bin\sfml-audio-d-2.dll" "$(OutputPath)sfml-audio-d-2.dll"</Command
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="enemy.h" />
-    <ClInclude Include="Level.h" />
+    <ClInclude Include="levels.h" />
     <ClInclude Include="map.h" />
     <ClInclude Include="player.h" />
     <ClInclude Include="TinyXML\tinystr.h" />

@@ -1,7 +1,6 @@
 #ifndef Enemy_H
 #define Enemy_H
 #include <SFML/Graphics.hpp>
-#include "map.h"
 
 using namespace sf;
 
@@ -18,7 +17,8 @@ public:
 	Image image;
 	Texture texture;
 	Sprite sprite;
-	Enemy(String F, float X, float Y, float W, float H) {
+	std::vector<Object> obj;
+	Enemy(String F, Level & lvl, float X, float Y, float W, float H) {
 		File = F;
 		w = W; h = H;
 		image.loadFromFile("images/" + File);
@@ -26,10 +26,11 @@ public:
 		sprite.setTexture(texture);
 		x = X; y = Y;
 		sprite.setTextureRect(IntRect(0, 0, w, h));
+		obj = lvl.GetObjects("solid");
 	}
 	void update(float time)
 	{
-		interactionWithMap();
+		Collision();
 		if (stop) 
 		{
 			dir = rand() % 4;
@@ -54,23 +55,28 @@ public:
 
 		sprite.setPosition(x, y);
 	}
-
-	void interactionWithMap()//ф-ция взаимодействия с картой
+	
+	FloatRect GetRect()
 	{
-		for (int i = y / 60; i < (y + h) / 60; i++)//проходимся по тайликам, контактирующим с игроком
-			for (int j = x / 60; j<(x + w) / 60; j++)//икс делим на 60, тем самым получаем левый квадратик, с которым персонаж соприкасается. (он ведь больше размера 32*32, поэтому может одновременно стоять на нескольких квадратах). А j<(x + w) / 32 - условие ограничения координат по иксу. то есть координата самого правого квадрата, который соприкасается с персонажем. таким образом идем в цикле слева направо по иксу, проходя по от левого квадрата (соприкасающегося с героем), до правого квадрата (соприкасающегося с героем)
+		return FloatRect(x, y, w, h);
+	}
+
+	void Collision()//ф-ция взаимодействия с картой
+	{
+		for (int i = 0; i<obj.size(); i++)//проходимся по объектам
+			if (GetRect().intersects(obj[i].rect))//проверяем пересечение игрока с объектом
 			{
-				if ((TileMap[i][j] == '0') || (TileMap[i][j] == '1') || (TileMap[i][j] == '2') || (TileMap[i][j] == '3') || (TileMap[i][j] == 'f'))//если наш квадратик соответствует символу 0 (стена), то проверяем "направление скорости" персонажа:
+				if (obj[i].name == "solid")//если встретили препятствие
 				{
-					if (dy>0)//если мы шли вниз,
-						y = i * 60 - h;//то стопорим координату игрек персонажа. сначала получаем координату нашего квадратика на карте(стены) и затем вычитаем из высоты спрайта персонажа.
-					if (dy<0)
-						y = i * 60 + 60;//аналогично с ходьбой вверх. dy<0, значит мы идем вверх (вспоминаем координаты паинта)
-					if (dx>0)
-						x = j * 60 - w;//если идем вправо, то координата Х равна стена (символ 0) минус ширина персонажа
-					if (dx < 0)
-						x = j * 60 + 60;//аналогично идем влево
 					stop = true;
+					if (dy>0) //если мы шли вниз,
+						y = obj[i].rect.top - h;//то стопорим координату игрек персонажа.
+					if (dy<0) 
+						y = obj[i].rect.top + obj[i].rect.height;//аналогично с ходьбой вверх. dy<0, значит мы идем вверх
+					if (dx>0) 
+						x = obj[i].rect.left - w; // если идем вправо, то координата Х равна стена(символ 0) минус ширина персонажа
+					if (dx<0) 
+						x = obj[i].rect.left + obj[i].rect.width;//аналогично идем влево
 				}
 			}
 	}

@@ -1,66 +1,73 @@
 #ifndef MY_H
 #define MY_H
+
 #include <SFML/Graphics.hpp>
-#include "map.h"
+#include <vector>
 
 using namespace sf;
+using namespace std;
 
 class Player {
 private:
 	float x, y;
 public:
 	float w, h, dx, dy, speed = 0;
-	int dir = 0;
+	int health = 100, dir = 0;
+	int  money = 10;
 	bool isShoot, life;
-	String File;
 	Image image;
 	Texture texture;
 	Sprite sprite;
-	Player(String F, float X, float Y, float W, float H) {
-		File = F;
-		w = W; 
-		h = H;
-		image.loadFromFile("images/" + File);
+	Vector2f pos;
+	vector<Object> obj;
+	Player(String F, Level &lev, float X, float Y, float W, float H) {
+		image.loadFromFile("images/" + F);
 		texture.loadFromImage(image);
 		sprite.setTexture(texture);
-		x = X; y = Y;
+		w = W;
+		h = H;
+		x = X;
+		y = Y;
 		sprite.setTextureRect(IntRect(0, 0, w, h));
+		obj = lev.GetAllObjects();
+		GetPlayercoordinateForView(x, y);
 	}
+	
 	void control()
 	{	///////////////////////////////////////////Управление персонажем с анимацией////////////////////////////////////////////////////////////////////////
+		pos = { x, y };
 		if (Keyboard::isKeyPressed(Keyboard::Left)) {
 			dir = 1;
 			speed = 0.2;
-			sprite.setTextureRect(IntRect(dir * 50, 0, 50, 50));
-			getplayercoordinateforview(getplayercoordinateX(), getplayercoordinateY());//передаем координаты игрока в функцию управления камерой
+			sprite.setTextureRect(IntRect(dir * 50, 0, w, h));
+			GetPlayercoordinateForView(x, y);//передаем координаты игрока в функцию управления камерой
 		}
 		if (Keyboard::isKeyPressed(Keyboard::Right)) {
 			dir = 0;
 			speed = 0.2;
-			sprite.setTextureRect(IntRect(dir * 50, 0, 50, 50));
-			getplayercoordinateforview(getplayercoordinateX(), getplayercoordinateY());
+			sprite.setTextureRect(IntRect(dir * 50, 0, w, h));
+			GetPlayercoordinateForView(x, y);
 		}
 		if (Keyboard::isKeyPressed(Keyboard::Up)) {
 			dir = 3;
 			speed = 0.2;
-			sprite.setTextureRect(IntRect(dir * 50, 0, 50, 50));
-			getplayercoordinateforview(getplayercoordinateX(), getplayercoordinateY());
+			sprite.setTextureRect(IntRect(dir * 50, 0, w, h));
+			GetPlayercoordinateForView(x, y);
 		}
 		if (Keyboard::isKeyPressed(Keyboard::Down)) {
 			dir = 2;
 			speed = 0.2;
-			sprite.setTextureRect(IntRect(dir * 50, 0, 50, 50));
-			getplayercoordinateforview(getplayercoordinateX(), getplayercoordinateY());
+			sprite.setTextureRect(IntRect(dir * 50, 0, w, h));
+			GetPlayercoordinateForView(x, y);
 		}
 		if (Keyboard::isKeyPressed(Keyboard::X))
 		{
 			isShoot = true;
 		}
-		
-		
 	}
 	void update(float time)
 	{
+		Collision();
 		switch (dir)
 		{
 		case 0: dx = speed; dy = 0; break;
@@ -73,46 +80,35 @@ public:
 
 		speed = 0;
 		sprite.setPosition(x, y);
-		interactionWithMap();
 	}
-
-	void interactionWithMap()//ф-ция взаимодействия с картой
+	
+	void Collision()
 	{
-
-		for (int i = y / 60; i < (y + h) / 60; i++)//проходимся по тайликам, контактирующим с игроком, то есть по всем квадратикам размера 32*32, которые мы окрашивали в 9 уроке. про условия читайте ниже.
-			for (int j = x / 60; j < (x + w) / 60; j++)//икс делим на 60, тем самым получаем левый квадратик, с которым персонаж соприкасается. (он ведь больше размера 32*32, поэтому может одновременно стоять на нескольких квадратах). А j<(x + w) / 32 - условие ограничения координат по иксу. то есть координата самого правого квадрата, который соприкасается с персонажем. таким образом идем в цикле слева направо по иксу, проходя по от левого квадрата (соприкасающегося с героем), до правого квадрата (соприкасающегося с героем)
+		FloatRect rect{ x, y, w, h };
+		for (int i = 0; i < obj.size(); i++)//проходимся по объектам
+			if (rect.intersects(obj[i].rect))//проверяем пересечение игрока с объектом
 			{
-				if ((TileMap[i][j] == '0') || (TileMap[i][j] == '1') || (TileMap[i][j] == '2') || (TileMap[i][j] == '3') || (TileMap[i][j] == 'f'))//если наш квадратик соответствует символу 0 (стена), то проверяем "направление скорости" персонажа:
+				if (obj[i].name == "solid")//если встретили препятствие
 				{
-					if (dy>0)//если мы шли вниз,
-					{
-						y = i * 60 - h;//то стопорим координату игрек персонажа. сначала получаем координату нашего квадратика на карте(стены) и затем вычитаем из высоты спрайта персонажа.
-					}
+					if (dy>0) //если мы шли вниз,
+						y = obj[i].rect.top - h;//то стопорим координату игрек персонажа.
 					if (dy<0)
-					{
-						y = i * 60 + 60;//аналогично с ходьбой вверх. dy<0, значит мы идем вверх (вспоминаем координаты паинта)
-					}
+						y = obj[i].rect.top + obj[i].rect.height ;//аналогично с ходьбой вверх. dy<0, значит мы идем вверх
 					if (dx>0)
-					{
-						x = j * 60 - w;//если идем вправо, то координата Х равна стена (символ 0) минус ширина персонажа
-					}
-					if (dx < 0)
-					{
-						x = j * 60 + 60;//аналогично идем влево
-					}
+						x = obj[i].rect.left - w; // если идем вправо, то координата Х равна стена(символ 0) минус ширина персонажа
+					if (dx<0)
+						x = obj[i].rect.left + obj[i].rect.width ;//аналогично идем влево
 				}
-				if ((TileMap[i][j] == 'b') || (TileMap[i][j] == 'd') || (TileMap[i][j] == 'c')) {
-					TileMap[i][j] = ' ';
+				else if ((obj[i].name == "bonus") || (obj[i].name == "diamond") || (obj[i].name == "chest"))
+				{
+					obj.erase(obj.begin() + i);
+					money += 10;
 				}
 			}
 	}
-
-	float getplayercoordinateX() {	//этим методом будем забирать координату Х	
-		return x;
-	}
-	float getplayercoordinateY() {	//этим методом будем забирать координату Y 	
-		return y;
+	Vector2f GetHeroPos()
+	{
+		return Vector2f(x, y);
 	}
 };
-
 #endif

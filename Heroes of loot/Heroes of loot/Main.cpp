@@ -2,7 +2,8 @@
 #include <iostream> 
 #include <vector>
 #include <list>
-#include "map.h"
+#include <sstream>
+#include "levels.h"
 #include "view.h"
 #include "player.h"
 #include "enemy.h"
@@ -11,19 +12,23 @@
 using namespace sf;
 using namespace std;
 
+const Vector2f WINDOW_SIZE = { 920, 640 };
+
 struct GraphicResource {
 	Image* im;
 	Texture* tex;
 	Sprite* spr;
 };
 
-void CleanTheMemory(GraphicResource & gr) {
+void CleanTheMemory(GraphicResource & gr) 
+{
 	delete gr.im;
 	delete gr.tex;
 	delete gr.spr;
 }
 
-GraphicResource MakeTheSprite(String fileName) {
+GraphicResource MakeTheSprite(String fileName) 
+{
 	GraphicResource gr;
 	gr.im = new Image();
 	gr.tex = new Texture();
@@ -34,87 +39,55 @@ GraphicResource MakeTheSprite(String fileName) {
 	return gr;
 }
 
-void draw_map(RenderWindow &window, Sprite &s_map, Sprite &s_fire, Sprite &s_bonus, float &current_frame, float time)
-{
-	for (int i = 0; i < HEIGHT_MAP; i++)
-		for (int j = 0; j < WIDTH_MAP; j++)
-		{
-			if (TileMap[i][j] == 'f')
-			{
-				if (current_frame > 3)
-					current_frame -= 3;
-				s_fire.setTextureRect(IntRect(60 * (int)current_frame, 0, 60, 180));
-				s_fire.setPosition(j * 60, i * 60 - 120);
-				window.draw(s_fire);
-			}
-			else if (TileMap[i][j] == '-')
-			{}
-			else if (TileMap[i][j] == 'c') {
-				s_bonus.setTextureRect(IntRect(60, 120, 60, 60));
-				s_bonus.setPosition(j * 60, i * 60);
-				window.draw(s_bonus);
-			}
-			else if ((TileMap[i][j] == 'd') || (TileMap[i][j] == 'b')) {
-				if (current_frame > 3)
-					current_frame -= 3;
-				if (TileMap[i][j] == 'd')
-					s_bonus.setTextureRect(IntRect(60 * (int)current_frame, 0, 60, 60));
-				else
-					s_bonus.setTextureRect(IntRect(60 * (int)current_frame, 60, 60, 60));
-				s_bonus.setPosition(j * 60, i * 60);
-				window.draw(s_bonus);
-			}
-			else
-			{
-				if (TileMap[i][j] == ' ')
-					s_map.setTextureRect(IntRect(240, 0, 60, 60));
-				if ((TileMap[i][j] == '0'))
-					s_map.setTextureRect(IntRect(0, 0, 60, 60));
-				if (TileMap[i][j] == '1')
-					s_map.setTextureRect(IntRect(60, 0, 60, 60));
-				if ((TileMap[i][j] == '2'))
-					s_map.setTextureRect(IntRect(120, 0, 60, 60));
-				if ((TileMap[i][j] == '3'))
-					s_map.setTextureRect(IntRect(180, 0, 60, 60));
-				if ((TileMap[i][j] == 's'))
-					s_map.setTextureRect(IntRect(300, 0, 60, 60));
-				s_map.setPosition(j * 60, i * 60);
-				window.draw(s_map);
-			}
-		}
-	current_frame += 0.005 * time;
-}
-
 int main()
 {
-	RenderWindow window(VideoMode(1280, 650), "Heroes of Loot");
+	
+	float current_frame = 0;
+	Clock clock;
 
-	Player hero("wizard.psd", 640, 380, 50, 50);
-	view.reset(FloatRect(0, 0, 1280, 650));
+	RenderWindow window(VideoMode(WINDOW_SIZE.x, WINDOW_SIZE.y), "Heroes of Loot");
+	view.reset(FloatRect(0, 0, WINDOW_SIZE.x, WINDOW_SIZE.y));
+	Level lvl;
+	lvl.LoadFromFile("map.tmx");
+	
+	Object player = lvl.GetObject("hero");
+	Player hero("wizard.psd", lvl, player.rect.left, player.rect.top, player.rect.width, player.rect.height);
+
+	vector<Object> enemy;
+	enemy = lvl.GetObjects("enemy");
 	
 	vector<Enemy*> ghosts;
 	vector<Enemy*>::iterator it_e;
+	for (int i = 0; i < enemy.size(); i++)
+	{
+		ghosts.push_back(new Enemy("enemies.psd", lvl, enemy[i].rect.left, enemy[i].rect.top, enemy[i].rect.width, enemy[i].rect.height));
+	}
 
 	vector<Weapons*> weapons;
 	vector<Weapons*>::iterator it_w;
 	
-	ghosts.push_back(new Enemy("enemies.psd", 500, 500, 50, 50));
-	ghosts.push_back(new Enemy("enemies.psd", 600, 600, 50, 50));
-	ghosts.push_back(new Enemy("enemies.psd", 600, 500, 50, 50));
 	
-	GraphicResource stMap = MakeTheSprite("map1.psd");
-	Sprite s_map = *stMap.spr;
-	GraphicResource stFire = MakeTheSprite("fire2.psd");
+	GraphicResource stFire = MakeTheSprite("fire.png");
 	Sprite s_fire = *stFire.spr;
-	GraphicResource stBonus = MakeTheSprite("bonus.psd");
+	GraphicResource stBonus = MakeTheSprite("bonus.png");
 	Sprite s_bonus = *stBonus.spr;
+	GraphicResource stDark = MakeTheSprite("darkness.psd");
+	Sprite s_dark = *stDark.spr;
+	s_dark.setOrigin(WINDOW_SIZE.x / 2, WINDOW_SIZE.y / 2);
+	GraphicResource stScales = MakeTheSprite("scales.png");
+	Sprite s_money = *stScales.spr;
+	s_money.setTextureRect(IntRect(0, 0, 30, 30));
+	Sprite s_living = *stScales.spr;
+	s_living.setTextureRect(IntRect(0, 30, 180, 40));
+	Sprite s_scale = *stScales.spr;
 
-	float current_frame = 0;
-	Clock clock;
+	Font font;//шрифт 
+	font.loadFromFile("font.ttf");//передаем нашему шрифту файл шрифта
+	Text text("", font, 20);//создаем объект текст. закидываем в объект текст строку, шрифт, размер шрифта(в пикселях);//сам объект текст (не строка)
+	text.setColor(Color::White);//покрасили текст в красный. если убрать эту строку, то по умолчанию он белый
+	text.setStyle(sf::Text::Bold);//жирный и подчеркнутый текст. по умолчанию он "худой":)) и не подчеркнутый
 
-	randomMapGenerate('d', 8);
-	randomMapGenerate('b', 10);
-	randomMapGenerate('c', 4);
+	
 
 	while (window.isOpen())
 	{
@@ -130,12 +103,22 @@ int main()
 				window.close();
 			if (hero.isShoot == true) 
 			{
-				weapons.push_back(new Weapons("weapons.psd", 20, 20, time, hero.getplayercoordinateX(), hero.getplayercoordinateY(), hero.dir));
+				weapons.push_back(new Weapons("weapons.psd", 20, 20, time, hero.GetHeroPos().x, hero.GetHeroPos().y, hero.dir));
 				hero.isShoot = false;
 			}
 		}
+		
 		hero.control();
 		hero.update(time);
+		s_dark.setPosition(view.getCenter().x, view.getCenter().y);
+		s_money.setPosition(view.getCenter().x + WINDOW_SIZE.x / 2 - 40, view.getCenter().y - WINDOW_SIZE.y / 2 + 10);
+		s_living.setPosition(view.getCenter().x - WINDOW_SIZE.x / 2 + 10, view.getCenter().y - WINDOW_SIZE.y / 2 + 10);
+		ostringstream money_str;
+		money_str << hero.money;
+		text.setString(money_str.str());//задает строку тексту
+		text.setPosition(view.getCenter().x, view.getCenter().y - WINDOW_SIZE.y / 2 + 10);//задаем позицию текста, центр камеры
+		
+
 		for (it_e = ghosts.begin(); it_e != ghosts.end(); it_e++)
 		{
 			Enemy *b = *it_e;
@@ -153,19 +136,31 @@ int main()
 			else
 				it_w++;
 		}
+		
 		window.setView(view);//"оживляем" камеру в окне sfml
 		
 		window.clear();
-		draw_map(window, s_map, s_fire, s_bonus, current_frame, time);
+		lvl.Draw(window);
+		lvl.DrawDynamicObjects(hero.obj, window, "bonus", s_bonus, 0, 0, time, current_frame);
+		lvl.DrawDynamicObjects(hero.obj, window, "diamond", s_bonus, 0, 60, time, current_frame);
+		lvl.DrawStaticObjects(hero.obj, window, "chest", s_bonus, 60, 120);
 		window.draw(hero.sprite);
+		lvl.DrawDynamicObjects(hero.obj, window, "fire", s_fire, 0, 0, time, current_frame);
+		
 		for (it_e = ghosts.begin(); it_e != ghosts.end(); it_e++)
 			window.draw((*it_e)->sprite);
 		for (it_w = weapons.begin(); it_w != weapons.end(); it_w++)
 			window.draw((*it_w)->sprite);
+		//window.draw(s_dark);
+		window.draw(s_money);
+		window.draw(s_living);
+		lvl.DrawDynamicSprite(window, s_scale, 0, 100, 136, 10, time, view.getCenter().x - WINDOW_SIZE.x / 2 + 50, view.getCenter().y - WINDOW_SIZE.y / 2 + 20, current_frame);
+		window.draw(text);//рисую этот текст
 		window.display();
 	}
-	CleanTheMemory(stMap);
 	CleanTheMemory(stFire);
 	CleanTheMemory(stBonus);
+	CleanTheMemory(stDark);
+	CleanTheMemory(stScales);
 	return 0;
 }

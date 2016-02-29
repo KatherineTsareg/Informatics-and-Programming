@@ -47,13 +47,13 @@
     <ClInclude Include="weapons.h">
       <Filter>Файлы исходного кода</Filter>
     </ClInclude>
-    <ClInclude Include="Level.h">
-      <Filter>Файлы исходного кода</Filter>
-    </ClInclude>
     <ClInclude Include="TinyXML\tinystr.h">
       <Filter>Файлы исходного кода</Filter>
     </ClInclude>
     <ClInclude Include="TinyXML\tinyxml.h">
+      <Filter>Файлы исходного кода</Filter>
+    </ClInclude>
+    <ClInclude Include="levels.h">
       <Filter>Файлы исходного кода</Filter>
     </ClInclude>
   </ItemGroup>

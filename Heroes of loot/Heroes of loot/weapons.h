@@ -1,7 +1,6 @@
 #ifndef weap_h
 #define weap_h
 #include <SFML/Graphics.hpp>
-#include "map.h"
 
 using namespace sf;
 
@@ -60,11 +59,11 @@ public:
 	{
 		int i = x / 60;
 		int j = y / 60;
-		if (life && IsOnTheMap())
+		/*if (life && IsOnTheMap())
 		{
 			if ((TileMap[i][j] == '0') || (TileMap[i][j] == '1') || (TileMap[i][j] == '2') || (TileMap[i][j] == '3') || (TileMap[i][j] == 'f')) 
 				life = false;
-		}
+		}*/
 	}
 };
 

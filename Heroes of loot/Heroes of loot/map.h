@@ -1,3 +1,4 @@
+/*
 #ifndef Map_H
 #define Map_H
 #include <SFML\Graphics.hpp>
@@ -43,3 +44,4 @@ void randomMapGenerate(char name_bonus, int numb_bonus)
 }
 
 #endif
+*/
