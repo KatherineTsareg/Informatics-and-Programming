@@ -1,85 +1,46 @@
 #ifndef Enemy_H
 #define Enemy_H
 #include <SFML/Graphics.hpp>
+#include "level.h"
+#include "game.h"
+#include <cmath>
 
 using namespace sf;
+using namespace std;
 
 class  Enemy {
 private:
 	float x, y;
 public:
-	float w, h, dx, dy;
-	float speed = 0.2;
-	int dir = 0;
-	bool stop = false;
-	float move_time = 0;
-	String File;
-	Image image;
-	Texture texture;
+	float w, h, dx, dy, speed, move_time = 0;
+	int  dir = 0;
+	bool stop_move, life = false;
+	vector <Object> obj;
 	Sprite sprite;
-	std::vector<Object> obj;
-	Enemy(String F, Level & lvl, float X, float Y, float W, float H) {
-		File = F;
-		w = W; h = H;
-		image.loadFromFile("images/" + File);
-		texture.loadFromImage(image);
+	Evil evil;
+	float health;
+
+	Enemy(Texture & texture, Level & lvl, Evil enemy_name, float X, float Y, float W, float H)
+	{
+		w = W; 
+		h = H;
+		x = X; 
+		y = Y;
+		evil = enemy_name;
+		speed = 0.1f + 0.02f * evil;
+		health = 20 * (evil + 1);
+
 		sprite.setTexture(texture);
-		x = X; y = Y;
-		sprite.setTextureRect(IntRect(0, 0, w, h));
-		obj = lvl.GetObjects("solid");
+		sprite.scale(4.0f, 4.0f);
+		sprite.setTextureRect(IntRect(39, 64 + evil * 12 * 2 , 12, 12));
+		obj = lvl.GetAllObjects();
+		life = true;
 	}
-	void update(float time)
-	{
-		Collision();
-		if (stop) 
-		{
-			dir = rand() % 4;
-			stop = false;
-		}
-		if (move_time >= 3)
-		{
-			dir = rand() % 4;
-			move_time -= 3;
-		}
+	void Enemy::Update(float time, const float player_x, const float player_y);
+	void Enemy::Collision();
+	FloatRect Enemy::GetRect();
+	void Enemy::ShiftWhenCrossing(FloatRect hero_rect);
 
-		switch (dir)
-		{
-		case 0: dx = speed; dy = 0; break;
-		case 1: dx = -speed; dy = 0; break;
-		case 2: dx = 0; dy = speed; break;
-		case 3: dx = 0; dy = -speed; break;
-		}
-		x += dx*time;
-		y += dy*time;
-		move_time += time * 0.0001;
-
-		sprite.setPosition(x, y);
-	}
-	
-	FloatRect GetRect()
-	{
-		return FloatRect(x, y, w, h);
-	}
-
-	void Collision()//ф-ция взаимодействия с картой
-	{
-		for (int i = 0; i<obj.size(); i++)//проходимся по объектам
-			if (GetRect().intersects(obj[i].rect))//проверяем пересечение игрока с объектом
-			{
-				if (obj[i].name == "solid")//если встретили препятствие
-				{
-					stop = true;
-					if (dy>0) //если мы шли вниз,
-						y = obj[i].rect.top - h;//то стопорим координату игрек персонажа.
-					if (dy<0) 
-						y = obj[i].rect.top + obj[i].rect.height;//аналогично с ходьбой вверх. dy<0, значит мы идем вверх
-					if (dx>0) 
-						x = obj[i].rect.left - w; // если идем вправо, то координата Х равна стена(символ 0) минус ширина персонажа
-					if (dx<0) 
-						x = obj[i].rect.left + obj[i].rect.width;//аналогично идем влево
-				}
-			}
-	}
 };
 
 #endif

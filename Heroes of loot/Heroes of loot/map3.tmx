@@ -1,0 +1,771 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="60" tileheight="60" nextobjectid="205">
+ <tileset firstgid="1" name="map5" tilewidth="60" tileheight="60" tilecount="48">
+  <image source="data/images/map5.png" width="480" height="360"/>
+ </tileset>
+ <layer name="tiles" width="30" height="20">
+  <data>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="2"/>
+   <tile gid="13"/>
+   <tile gid="13"/>
+   <tile gid="13"/>
+   <tile gid="13"/>
+   <tile gid="13"/>
+   <tile gid="13"/>
+   <tile gid="13"/>
+   <tile gid="13"/>
+   <tile gid="13"/>
+   <tile gid="13"/>
+   <tile gid="14"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="17"/>
+   <tile gid="11"/>
+   <tile gid="21"/>
+   <tile gid="21"/>
+   <tile gid="21"/>
+   <tile gid="21"/>
+   <tile gid="21"/>
+   <tile gid="21"/>
+   <tile gid="21"/>
+   <tile gid="21"/>
+   <tile gid="21"/>
+   <tile gid="36"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="2"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="4"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="17"/>
+   <tile gid="35"/>
+   <tile gid="9"/>
+   <tile gid="7"/>
+   <tile gid="14"/>
+   <tile gid="27"/>
+   <tile gid="2"/>
+   <tile gid="7"/>
+   <tile gid="14"/>
+   <tile gid="27"/>
+   <tile gid="45"/>
+   <tile gid="36"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="17"/>
+   <tile gid="11"/>
+   <tile gid="21"/>
+   <tile gid="21"/>
+   <tile gid="21"/>
+   <tile gid="21"/>
+   <tile gid="21"/>
+   <tile gid="21"/>
+   <tile gid="22"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="17"/>
+   <tile gid="35"/>
+   <tile gid="24"/>
+   <tile gid="11"/>
+   <tile gid="24"/>
+   <tile gid="35"/>
+   <tile gid="24"/>
+   <tile gid="11"/>
+   <tile gid="24"/>
+   <tile gid="35"/>
+   <tile gid="45"/>
+   <tile gid="36"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="17"/>
+   <tile gid="35"/>
+   <tile gid="9"/>
+   <tile gid="7"/>
+   <tile gid="7"/>
+   <tile gid="7"/>
+   <tile gid="14"/>
+   <tile gid="27"/>
+   <tile gid="22"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="17"/>
+   <tile gid="35"/>
+   <tile gid="24"/>
+   <tile gid="35"/>
+   <tile gid="24"/>
+   <tile gid="35"/>
+   <tile gid="24"/>
+   <tile gid="35"/>
+   <tile gid="24"/>
+   <tile gid="35"/>
+   <tile gid="45"/>
+   <tile gid="36"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="17"/>
+   <tile gid="35"/>
+   <tile gid="12"/>
+   <tile gid="14"/>
+   <tile gid="11"/>
+   <tile gid="21"/>
+   <tile gid="32"/>
+   <tile gid="35"/>
+   <tile gid="12"/>
+   <tile gid="13"/>
+   <tile gid="13"/>
+   <tile gid="13"/>
+   <tile gid="13"/>
+   <tile gid="13"/>
+   <tile gid="13"/>
+   <tile gid="13"/>
+   <tile gid="13"/>
+   <tile gid="10"/>
+   <tile gid="35"/>
+   <tile gid="42"/>
+   <tile gid="7"/>
+   <tile gid="44"/>
+   <tile gid="35"/>
+   <tile gid="42"/>
+   <tile gid="8"/>
+   <tile gid="27"/>
+   <tile gid="36"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="17"/>
+   <tile gid="35"/>
+   <tile gid="20"/>
+   <tile gid="24"/>
+   <tile gid="35"/>
+   <tile gid="45"/>
+   <tile gid="20"/>
+   <tile gid="19"/>
+   <tile gid="20"/>
+   <tile gid="21"/>
+   <tile gid="21"/>
+   <tile gid="21"/>
+   <tile gid="21"/>
+   <tile gid="21"/>
+   <tile gid="21"/>
+   <tile gid="21"/>
+   <tile gid="21"/>
+   <tile gid="18"/>
+   <tile gid="19"/>
+   <tile gid="20"/>
+   <tile gid="21"/>
+   <tile gid="18"/>
+   <tile gid="19"/>
+   <tile gid="20"/>
+   <tile gid="21"/>
+   <tile gid="19"/>
+   <tile gid="36"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="17"/>
+   <tile gid="35"/>
+   <tile gid="45"/>
+   <tile gid="24"/>
+   <tile gid="35"/>
+   <tile gid="45"/>
+   <tile gid="28"/>
+   <tile gid="29"/>
+   <tile gid="29"/>
+   <tile gid="43"/>
+   <tile gid="43"/>
+   <tile gid="43"/>
+   <tile gid="43"/>
+   <tile gid="43"/>
+   <tile gid="43"/>
+   <tile gid="43"/>
+   <tile gid="43"/>
+   <tile gid="43"/>
+   <tile gid="43"/>
+   <tile gid="43"/>
+   <tile gid="43"/>
+   <tile gid="43"/>
+   <tile gid="43"/>
+   <tile gid="43"/>
+   <tile gid="43"/>
+   <tile gid="43"/>
+   <tile gid="44"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="34"/>
+   <tile gid="35"/>
+   <tile gid="45"/>
+   <tile gid="24"/>
+   <tile gid="35"/>
+   <tile gid="28"/>
+   <tile gid="44"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="9"/>
+   <tile gid="13"/>
+   <tile gid="10"/>
+   <tile gid="35"/>
+   <tile gid="45"/>
+   <tile gid="24"/>
+   <tile gid="35"/>
+   <tile gid="12"/>
+   <tile gid="14"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="17"/>
+   <tile gid="11"/>
+   <tile gid="18"/>
+   <tile gid="19"/>
+   <tile gid="45"/>
+   <tile gid="24"/>
+   <tile gid="35"/>
+   <tile gid="20"/>
+   <tile gid="12"/>
+   <tile gid="13"/>
+   <tile gid="13"/>
+   <tile gid="13"/>
+   <tile gid="13"/>
+   <tile gid="13"/>
+   <tile gid="13"/>
+   <tile gid="13"/>
+   <tile gid="13"/>
+   <tile gid="13"/>
+   <tile gid="13"/>
+   <tile gid="13"/>
+   <tile gid="13"/>
+   <tile gid="13"/>
+   <tile gid="4"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="17"/>
+   <tile gid="35"/>
+   <tile gid="9"/>
+   <tile gid="7"/>
+   <tile gid="7"/>
+   <tile gid="10"/>
+   <tile gid="35"/>
+   <tile gid="45"/>
+   <tile gid="20"/>
+   <tile gid="21"/>
+   <tile gid="21"/>
+   <tile gid="21"/>
+   <tile gid="21"/>
+   <tile gid="21"/>
+   <tile gid="21"/>
+   <tile gid="21"/>
+   <tile gid="21"/>
+   <tile gid="21"/>
+   <tile gid="21"/>
+   <tile gid="21"/>
+   <tile gid="21"/>
+   <tile gid="21"/>
+   <tile gid="22"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="17"/>
+   <tile gid="35"/>
+   <tile gid="24"/>
+   <tile gid="11"/>
+   <tile gid="21"/>
+   <tile gid="18"/>
+   <tile gid="19"/>
+   <tile gid="45"/>
+   <tile gid="45"/>
+   <tile gid="15"/>
+   <tile gid="7"/>
+   <tile gid="7"/>
+   <tile gid="7"/>
+   <tile gid="7"/>
+   <tile gid="7"/>
+   <tile gid="7"/>
+   <tile gid="7"/>
+   <tile gid="7"/>
+   <tile gid="4"/>
+   <tile gid="27"/>
+   <tile gid="16"/>
+   <tile gid="27"/>
+   <tile gid="12"/>
+   <tile gid="13"/>
+   <tile gid="13"/>
+   <tile gid="13"/>
+   <tile gid="13"/>
+   <tile gid="13"/>
+   <tile gid="13"/>
+   <tile gid="14"/>
+   <tile gid="17"/>
+   <tile gid="35"/>
+   <tile gid="12"/>
+   <tile gid="7"/>
+   <tile gid="7"/>
+   <tile gid="7"/>
+   <tile gid="7"/>
+   <tile gid="8"/>
+   <tile gid="27"/>
+   <tile gid="20"/>
+   <tile gid="21"/>
+   <tile gid="21"/>
+   <tile gid="21"/>
+   <tile gid="21"/>
+   <tile gid="21"/>
+   <tile gid="21"/>
+   <tile gid="21"/>
+   <tile gid="21"/>
+   <tile gid="24"/>
+   <tile gid="35"/>
+   <tile gid="24"/>
+   <tile gid="35"/>
+   <tile gid="20"/>
+   <tile gid="21"/>
+   <tile gid="21"/>
+   <tile gid="21"/>
+   <tile gid="21"/>
+   <tile gid="21"/>
+   <tile gid="21"/>
+   <tile gid="22"/>
+   <tile gid="34"/>
+   <tile gid="35"/>
+   <tile gid="20"/>
+   <tile gid="18"/>
+   <tile gid="18"/>
+   <tile gid="18"/>
+   <tile gid="18"/>
+   <tile gid="18"/>
+   <tile gid="19"/>
+   <tile gid="45"/>
+   <tile gid="45"/>
+   <tile gid="45"/>
+   <tile gid="45"/>
+   <tile gid="9"/>
+   <tile gid="13"/>
+   <tile gid="13"/>
+   <tile gid="26"/>
+   <tile gid="27"/>
+   <tile gid="24"/>
+   <tile gid="35"/>
+   <tile gid="24"/>
+   <tile gid="7"/>
+   <tile gid="7"/>
+   <tile gid="7"/>
+   <tile gid="7"/>
+   <tile gid="7"/>
+   <tile gid="7"/>
+   <tile gid="8"/>
+   <tile gid="27"/>
+   <tile gid="22"/>
+   <tile gid="42"/>
+   <tile gid="43"/>
+   <tile gid="29"/>
+   <tile gid="29"/>
+   <tile gid="29"/>
+   <tile gid="29"/>
+   <tile gid="29"/>
+   <tile gid="29"/>
+   <tile gid="29"/>
+   <tile gid="29"/>
+   <tile gid="29"/>
+   <tile gid="26"/>
+   <tile gid="27"/>
+   <tile gid="24"/>
+   <tile gid="11"/>
+   <tile gid="21"/>
+   <tile gid="32"/>
+   <tile gid="35"/>
+   <tile gid="24"/>
+   <tile gid="35"/>
+   <tile gid="24"/>
+   <tile gid="11"/>
+   <tile gid="21"/>
+   <tile gid="21"/>
+   <tile gid="21"/>
+   <tile gid="21"/>
+   <tile gid="21"/>
+   <tile gid="21"/>
+   <tile gid="19"/>
+   <tile gid="22"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="34"/>
+   <tile gid="35"/>
+   <tile gid="24"/>
+   <tile gid="35"/>
+   <tile gid="45"/>
+   <tile gid="20"/>
+   <tile gid="19"/>
+   <tile gid="24"/>
+   <tile gid="35"/>
+   <tile gid="32"/>
+   <tile gid="35"/>
+   <tile gid="28"/>
+   <tile gid="43"/>
+   <tile gid="43"/>
+   <tile gid="43"/>
+   <tile gid="43"/>
+   <tile gid="43"/>
+   <tile gid="43"/>
+   <tile gid="44"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="9"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="10"/>
+   <tile gid="35"/>
+   <tile gid="12"/>
+   <tile gid="7"/>
+   <tile gid="7"/>
+   <tile gid="7"/>
+   <tile gid="7"/>
+   <tile gid="10"/>
+   <tile gid="35"/>
+   <tile gid="20"/>
+   <tile gid="19"/>
+   <tile gid="36"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="17"/>
+   <tile gid="11"/>
+   <tile gid="21"/>
+   <tile gid="21"/>
+   <tile gid="21"/>
+   <tile gid="21"/>
+   <tile gid="21"/>
+   <tile gid="21"/>
+   <tile gid="21"/>
+   <tile gid="18"/>
+   <tile gid="19"/>
+   <tile gid="20"/>
+   <tile gid="21"/>
+   <tile gid="21"/>
+   <tile gid="21"/>
+   <tile gid="21"/>
+   <tile gid="21"/>
+   <tile gid="19"/>
+   <tile gid="45"/>
+   <tile gid="45"/>
+   <tile gid="36"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="42"/>
+   <tile gid="43"/>
+   <tile gid="43"/>
+   <tile gid="43"/>
+   <tile gid="43"/>
+   <tile gid="43"/>
+   <tile gid="43"/>
+   <tile gid="43"/>
+   <tile gid="43"/>
+   <tile gid="43"/>
+   <tile gid="43"/>
+   <tile gid="43"/>
+   <tile gid="43"/>
+   <tile gid="43"/>
+   <tile gid="43"/>
+   <tile gid="43"/>
+   <tile gid="43"/>
+   <tile gid="43"/>
+   <tile gid="43"/>
+   <tile gid="43"/>
+   <tile gid="44"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+  </data>
+ </layer>
+ <objectgroup name="collision" visible="0">
+  <object id="1" name="solid" x="0" y="2" width="1079.5" height="178.125"/>
+  <object id="4" name="solid" x="600.5" y="167" width="479" height="192.625"/>
+  <object id="6" name="solid" x="0" y="173.5" width="179.625" height="367.5"/>
+  <object id="7" name="solid" x="480.625" y="420.625" width="1319.38" height="238.875"/>
+  <object id="8" name="solid" x="0" y="900.5" width="719.625" height="179.125"/>
+  <object id="9" name="solid" x="1320.5" y="960.5" width="477.5" height="239.5"/>
+  <object id="10" name="solid" x="1320.5" y="655.625" width="479.5" height="124"/>
+  <object id="11" name="solid" x="1680.5" y="0" width="117.5" height="422"/>
+  <object id="12" name="solid" x="1076" y="0" width="609.25" height="59.5"/>
+  <object id="13" name="solid" x="3.625" y="1072.25" width="176" height="78"/>
+  <object id="14" name="solid" x="2" y="1140.5" width="1324.25" height="64.5"/>
+  <object id="15" name="solid" x="1202" y="722" width="56" height="296"/>
+  <object id="16" name="solid" x="1740.5" y="722" width="57.5" height="297.75"/>
+  <object id="17" name="solid" x="1140" y="120.75" width="59.5" height="238.75"/>
+  <object id="18" name="solid" x="1260.62" y="120.75" width="58.875" height="238.75"/>
+  <object id="19" name="solid" x="1380.5" y="120.5" width="59" height="238.875"/>
+  <object id="20" name="solid" x="1500.5" y="120.5" width="59.125" height="239"/>
+  <object id="21" name="solid" x="300.75" y="296.25" width="58.75" height="421.75"/>
+  <object id="22" name="solid" x="121" y="661" width="59" height="178.25"/>
+  <object id="23" name="solid" x="481" y="240.688" width="58.25" height="118.062"/>
+  <object id="24" name="solid" x="240.312" y="240.688" width="65.75" height="119.062"/>
+  <object id="25" name="solid" x="1080.73" y="722" width="58.5455" height="357.273"/>
+  <object id="26" name="solid" x="780.727" y="840.909" width="58.5455" height="238.364"/>
+  <object id="27" name="solid" x="960.545" y="841.909" width="58.7273" height="116.636"/>
+  <object id="28" name="solid" x="160.5" y="781" width="318" height="58"/>
+  <object id="30" name="solid" x="121" y="661" width="238.5" height="58.25"/>
+  <object id="31" name="solid" x="241" y="240.688" width="294.375" height="59.0625"/>
+  <object id="32" name="solid" x="811" y="1020.55" width="298.818" height="58.5455"/>
+  <object id="33" name="solid" x="782.727" y="840.909" width="236.545" height="58.1818"/>
+  <object id="34" name="solid" x="1211" y="842" width="467" height="56"/>
+  <object id="35" name="solid" x="540.909" y="720.909" width="598.545" height="58.3636"/>
+  <object id="36" name="solid" x="1147" y="120.75" width="167" height="58.75"/>
+  <object id="37" name="solid" x="1388.5" y="120.5" width="167" height="59"/>
+  <object id="38" name="solid" x="1270.5" y="300.5" width="167" height="58.875"/>
+  <object id="39" name="solid" x="1014" y="300.375" width="177" height="59.125"/>
+  <object id="40" name="solid" x="1520" y="300.75" width="98.75" height="58.625"/>
+  <object id="41" name="solid" x="2" y="564" width="57.5" height="368"/>
+  <object id="42" name="hero" x="875" y="937" width="48" height="48"/>
+  <object id="43" name="ghost" x="666" y="816" width="50" height="50"/>
+  <object id="45" name="ghost" x="845" y="787" width="50" height="50"/>
+  <object id="46" name="ghost" x="1147" y="783" width="50" height="50"/>
+  <object id="47" name="demon" x="1143" y="967" width="50" height="50"/>
+  <object id="48" name="cyclop" x="1683" y="787" width="50" height="50"/>
+  <object id="49" name="ghost" x="1445" y="905" width="50" height="50"/>
+  <object id="50" name="ghost" x="1265" y="785" width="50" height="50"/>
+  <object id="51" name="ghost" x="1265" y="1025" width="50" height="50"/>
+  <object id="52" name="cyclop" x="1025" y="1085" width="50" height="50"/>
+  <object id="53" name="ghost" x="845" y="1083" width="50" height="50"/>
+  <object id="54" name="cyclop" x="305" y="1083" width="50" height="50"/>
+  <object id="55" name="cyclop" x="487" y="1089" width="50" height="50"/>
+  <object id="56" name="cyclop" x="727" y="967" width="50" height="50"/>
+  <object id="57" name="cyclop" x="243" y="847.667" width="50" height="50"/>
+  <object id="58" name="flash" x="67" y="729" width="50" height="50"/>
+  <object id="59" name="cyclop" x="239" y="551" width="50" height="50"/>
+  <object id="60" name="ghost" x="181" y="423" width="50" height="50"/>
+  <object id="61" name="demon" x="187" y="245" width="50" height="50"/>
+  <object id="62" name="ghost" x="543" y="189" width="50" height="50"/>
+  <object id="63" name="cyclop" x="367" y="303" width="50" height="50"/>
+  <object id="64" name="minotaur" x="371" y="487" width="50" height="50"/>
+  <object id="65" name="ghost" x="427" y="673" width="50" height="50"/>
+  <object id="66" name="demon" x="725" y="363" width="50" height="50"/>
+  <object id="67" name="cyclop" x="965" y="367" width="50" height="50"/>
+  <object id="68" name="ghost" x="1085" y="185" width="50" height="50"/>
+  <object id="69" name="cyclop" x="1205" y="187" width="50" height="50"/>
+  <object id="70" name="ghost" x="1325" y="181" width="50" height="50"/>
+  <object id="71" name="ghost" x="1447" y="189" width="50" height="50"/>
+  <object id="72" name="cyclop" x="1563" y="183" width="50" height="50"/>
+  <object id="73" name="ghost" x="1623" y="305" width="50" height="50"/>
+  <object id="74" name="ghost" x="1327" y="363" width="50" height="50"/>
+  <object id="132" name="ghost" x="905.333" y="666.667" width="50" height="50"/>
+  <object id="134" name="cyclop" x="668.333" y="665.667" width="50" height="50"/>
+  <object id="135" name="cyclop" x="484.333" y="844.333" width="50" height="50"/>
+  <object id="201" name="door" x="59.375" y="540" width="60.5625" height="59.5625"/>
+  <object id="202" name="solid" x="119.938" y="539.312" width="59.625" height="60.1875"/>
+  <object id="203" name="solid" x="421.333" y="480" width="73.3333" height="117.333"/>
+ </objectgroup>
+ <objectgroup name="bonus">
+  <object id="75" name="bonus" x="1082" y="240" width="60" height="60"/>
+  <object id="77" name="bonus" x="1320.67" y="238" width="60" height="60"/>
+  <object id="78" name="bonus" x="1564" y="238" width="60" height="60"/>
+  <object id="82" name="bonus" x="542" y="182" width="60" height="60"/>
+  <object id="83" name="bonus" x="362" y="299.333" width="60" height="60"/>
+  <object id="84" name="bonus" x="182" y="720" width="60" height="60"/>
+  <object id="85" name="bonus" x="58" y="660" width="60" height="60"/>
+  <object id="86" name="bonus" x="902.667" y="958.667" width="60" height="60"/>
+  <object id="87" name="bonus" x="1021.33" y="876.667" width="60" height="60"/>
+  <object id="89" name="bonus" x="1684" y="836" width="60" height="60"/>
+  <object id="91" name="bonus" x="241.333" y="1080.67" width="60" height="60"/>
+  <object id="94" name="bonus" x="236" y="480" width="60" height="60"/>
+  <object id="100" name="diamond" x="244" y="720" width="60" height="60"/>
+  <object id="102" name="diamond" x="718" y="360.667" width="60" height="60"/>
+  <object id="104" name="diamond" x="1199.33" y="178" width="60" height="60"/>
+  <object id="105" name="diamond" x="1442" y="180.667" width="60" height="60"/>
+  <object id="113" name="diamond" x="1140.67" y="843.333" width="60" height="60"/>
+  <object id="114" name="diamond" x="962" y="662" width="60" height="60"/>
+  <object id="116" name="diamond" x="1382" y="780.667" width="60" height="60"/>
+  <object id="117" name="diamond" x="1259.33" y="1083.33" width="60" height="60"/>
+  <object id="118" name="diamond" x="538" y="660.667" width="60" height="60"/>
+  <object id="120" name="diamond" x="180.667" y="244.667" width="60" height="60"/>
+  <object id="121" name="diamond" x="179.333" y="1080.67" width="60" height="60"/>
+  <object id="122" name="key" x="420" y="300" width="60" height="60"/>
+  <object id="125" name="heart" x="331.333" y="1080.67" width="60" height="60"/>
+  <object id="126" name="chest" x="840.667" y="902" width="60" height="60"/>
+  <object id="131" name="chest" x="60.6667" y="840.667" width="60" height="60"/>
+  <object id="140" name="bonus" x="967.333" y="958" width="60" height="60"/>
+  <object id="142" name="bonus" x="722" y="960.667" width="60" height="60"/>
+  <object id="147" name="diamond" x="360.667" y="840.667" width="60" height="60"/>
+  <object id="148" name="bonus" x="1574" y="902" width="60" height="60"/>
+ </objectgroup>
+ <objectgroup name="torch">
+  <object id="150" name="torch" x="178.667" y="57.3333" width="60" height="120"/>
+  <object id="151" name="torch" x="360.667" y="53.3333" width="60" height="120"/>
+  <object id="152" name="torch" x="542" y="53.3333" width="60" height="120"/>
+  <object id="153" name="torch" x="602" y="182.667" width="60" height="120"/>
+  <object id="154" name="torch" x="119.333" y="178.667" width="60" height="120"/>
+  <object id="155" name="torch" x="119.333" y="420" width="60" height="120"/>
+  <object id="156" name="torch" x="299.333" y="361.333" width="60" height="120"/>
+  <object id="157" name="torch" x="302" y="541.333" width="60" height="120"/>
+  <object id="158" name="torch" x="-0.666667" y="597.333" width="60" height="120"/>
+  <object id="159" name="torch" x="-2" y="780" width="60" height="120"/>
+  <object id="160" name="torch" x="118" y="838.667" width="60" height="120"/>
+  <object id="161" name="torch" x="242" y="716" width="60" height="120"/>
+  <object id="162" name="torch" x="418" y="837.333" width="60" height="120"/>
+  <object id="163" name="torch" x="119.333" y="1018.67" width="60" height="120"/>
+  <object id="164" name="torch" x="238" y="954.667" width="60" height="120"/>
+  <object id="165" name="torch" x="362" y="1077.33" width="60" height="120"/>
+  <object id="166" name="torch" x="480.667" y="961.333" width="60" height="120"/>
+  <object id="167" name="torch" x="659.333" y="900" width="60" height="120"/>
+  <object id="168" name="torch" x="782" y="902.667" width="60" height="120"/>
+  <object id="169" name="torch" x="902" y="778.667" width="60" height="120"/>
+  <object id="170" name="torch" x="960.667" y="957.333" width="60" height="120"/>
+  <object id="171" name="torch" x="658" y="656" width="60" height="120"/>
+  <object id="172" name="torch" x="839.333" y="656" width="60" height="120"/>
+  <object id="173" name="torch" x="1076.67" y="657.333" width="60" height="120"/>
+  <object id="174" name="torch" x="1079.33" y="841.333" width="60" height="120"/>
+  <object id="175" name="torch" x="1200.67" y="780" width="60" height="120"/>
+  <object id="176" name="torch" x="1320.67" y="1020" width="60" height="120"/>
+  <object id="177" name="torch" x="1683.33" y="900" width="60" height="120"/>
+  <object id="178" name="torch" x="1382" y="776" width="60" height="120"/>
+  <object id="179" name="torch" x="1560.67" y="778.667" width="60" height="120"/>
+  <object id="180" name="torch" x="1438" y="656" width="60" height="120"/>
+  <object id="181" name="torch" x="1622" y="658.667" width="60" height="120"/>
+  <object id="182" name="torch" x="1743.33" y="778.667" width="60" height="120"/>
+  <object id="183" name="torch" x="1260.67" y="537.333" width="60" height="120"/>
+  <object id="184" name="torch" x="1019.33" y="537.333" width="60" height="120"/>
+  <object id="185" name="torch" x="783.333" y="536" width="60" height="120"/>
+  <object id="186" name="torch" x="602" y="537.333" width="60" height="120"/>
+  <object id="187" name="torch" x="480.667" y="421.333" width="60" height="120"/>
+  <object id="188" name="torch" x="842" y="236" width="60" height="120"/>
+  <object id="189" name="torch" x="1019.33" y="57.3333" width="60" height="120"/>
+  <object id="190" name="torch" x="1082" y="236" width="60" height="120"/>
+  <object id="191" name="torch" x="1139.33" y="116" width="60" height="120"/>
+  <object id="192" name="torch" x="1259.33" y="181.333" width="60" height="120"/>
+  <object id="193" name="torch" x="1380.67" y="117.333" width="60" height="120"/>
+  <object id="194" name="torch" x="1502" y="177.333" width="60" height="120"/>
+  <object id="195" name="torch" x="1682" y="60" width="60" height="120"/>
+  <object id="196" name="torch" x="1680.67" y="238.667" width="60" height="120"/>
+  <object id="197" name="torch" x="1258" y="-65.3333" width="60" height="120"/>
+  <object id="200" name="torch" x="1470" y="-62.6667" width="60" height="120"/>
+ </objectgroup>
+</map>

@@ -1,6 +1,8 @@
 #ifndef weap_h
 #define weap_h
 #include <SFML/Graphics.hpp>
+#include "level.h"
+#include "game.h"
 
 using namespace sf;
 
@@ -9,62 +11,48 @@ private:
 	float x, y;
 public:
 	bool life;
-	float w, h, dx, dy;
-	float speed = 0.2;
-	int dir;
-	String File;
-	Image image;
+	float dx, dy;
+	int w, h;
+	float speed = 0.2f;
+	IntRect rect;
+	Direction dir;
 	Texture texture;
 	Sprite sprite;
-	Weapons(String F, float W, float H, float time, float X, float Y, int player_dir) {
-		File = F;
-		w = W; h = H;
-		image.loadFromFile("images/" + File);
-		texture.loadFromImage(image);
-		sprite.setTexture(texture);
-		sprite.setTextureRect(IntRect(0, 0, w, h));
-		x = X;
-		y = Y;
-		dir = player_dir;
-		speed = 0.8;
-		life = true;
-	}
-	void update(float time)
-	{
-		switch (dir)
+	std::vector<Object> obj;
+	Weapons(Texture & texture, Characters hero, Level &lvl, float time, Vector2f player_pos, Direction player_dir) {
+		switch (hero)
 		{
-		case 0: dx = speed; dy = 0; break;
-		case 1: dx = -speed; dy = 0; break;
-		case 2: dx = 0; dy = speed; break;
-		case 3: dx = 0; dy = -speed; break;
+		case ELF:
+			w = 3;
+			h = 10;
+			break;
+		case WARRIOR:
+			w = 3;
+			h = 10;
+			break;
+		case WIZARD:
+			w = 4;
+			h = 4;
+			break;
+		case VALKYRIE:
+			w = 5;
+			h = 10;
 		}
-		
-		x += dx*time;
-		y += dy*time;
-
-		interactionWithMap();
-		
-		sprite.setPosition(x + w/2, y + h/2);
-		
+		rect = { 25, hero * 12 * 4 + 12, w , h };
+		sprite.scale(4.0f, 4.0f);
+		sprite.setOrigin((float)w / 2.0f, (float)h / 2.0f);
+		sprite.setTexture(texture);
+		sprite.setTextureRect(rect);
+		x = player_pos.x;
+		y = player_pos.y;
+		dir = player_dir;
+		speed = 0.4f;
+		life = true;
+		obj = lvl.GetObjects("solid");
 	}
-	bool IsOnTheMap()
-	{
-		if ((x >= 0) && (y >= 0) && (x <= 1280) && (y <= 650))
-			return true;
-		else
-			return false;
-	}
-
-	void interactionWithMap()//ф-ция взаимодействия с картой
-	{
-		int i = x / 60;
-		int j = y / 60;
-		/*if (life && IsOnTheMap())
-		{
-			if ((TileMap[i][j] == '0') || (TileMap[i][j] == '1') || (TileMap[i][j] == '2') || (TileMap[i][j] == '3') || (TileMap[i][j] == 'f')) 
-				life = false;
-		}*/
-	}
+	void Weapons::update(float time, FloatRect heroRect);
+	void Weapons::interactionWithMap();
+	FloatRect Weapons::GetRect();
 };
 
 #endif
